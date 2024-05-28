@@ -1,0 +1,10 @@
+<section *ngIf="pokemon">
+  <h2>{{ pokemon.name }}</h2>
+  <img [src]="pokemon.image" alt="{{ pokemon.name }}" />
+  <div>
+    <h3>Types:</h3>
+    <ul>
+      <li *ngFor="let type of pokemon.types">{{ type }}</li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<section>
+  <h1>Pokedex</h1>
+  <app-pokemon-detail [pokemon]="selectedPokemon"></app-pokemon-detail>
+  <app-pokemon-list
+    [pokemons]="pokemons"
+    (select)="selectPokemon($event)"
+  ></app-pokemon-list>
+</section>

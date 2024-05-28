@@ -1,0 +1,37 @@
+section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  border: 1px solid #000;
+}
+
+section > div {
+  border: 1px solid #000;
+  border-top: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 150px; /* Set a minimum width for flex-grow */
+  flex-basis: 33%; /* Ensure the same number of pokemon on each row, assuming 3 per row */
+  /* Calculate the height of each pokemon card to fit 3 rows within the viewport height,
+     subtracting the total border height (64px * 2) from the viewport height (100vh) */
+  height: calc((100vh - 128px) / 3);
+}
+button {
+  cursor: pointer;
+  color: #fff;
+  background-color: #3b4cca; /* Blue color */
+  padding: 12px;
+  max-width: 180px; /* Set a minimum width for flex-grow */
+  border-radius: 8px;
+  border: 2px solid #ffcb05; /* Yellow color */
+  font-family: "Press Start 2P", cursive;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #ffcb05; /* Yellow color */
+  color: #3b4cca; /* Blue color */
+}

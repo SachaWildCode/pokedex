@@ -1,0 +1,8 @@
+<section>
+  <div *ngFor="let pokemon of pokemons">
+    <img src="{{ pokemon.image }}" alt="" />
+    <button (click)="onSelect(pokemon)" (keypress)="onSelect(pokemon)">
+      {{ pokemon.name }}
+    </button>
+  </div>
+</section>

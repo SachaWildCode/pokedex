@@ -1,0 +1,36 @@
+section {
+  width: 100%;
+  display: flex;
+  border: 64px solid black;
+  max-height: 100vh;
+}
+h1 {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  line-height: 0;
+}
+app-pokemon-detail {
+  width: 30%;
+  background-color: red;
+  min-width: 200px;
+}
+
+app-pokemon-list {
+  overflow-y: scroll;
+  width: 70%;
+}
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+  }
+  app-pokemon-detail {
+    width: 100%;
+    min-height: 200px;
+  }
+  app-pokemon-list {
+    width: 100%;
+  }
+}
