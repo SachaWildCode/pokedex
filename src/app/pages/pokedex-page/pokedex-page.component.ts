@@ -13,9 +13,12 @@ import { PokedexServiceService } from '../../shared/services/pokedex.service';
 })
 export class PokedexPageComponent {
   pokemons: Pokemon[] = [];
-  selectedPokemon!: Pokemon;
+  selectedPokemon?: Pokemon;
+
   constructor(private pokedexService: PokedexServiceService) {
-    this.pokemons = this.pokedexService.getPokemons();
+    this.pokedexService
+      .getPokemons()
+      .subscribe((pokemons) => (this.pokemons = pokemons));
   }
 
   selectPokemon(pokemon: Pokemon): void {

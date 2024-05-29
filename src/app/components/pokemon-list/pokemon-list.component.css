@@ -35,3 +35,11 @@ button:hover {
   background-color: #ffcb05; /* Yellow color */
   color: #3b4cca; /* Blue color */
 }
+button:active {
+  transform: scale(0.95);
+}
+img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+}

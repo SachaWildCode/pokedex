@@ -1,7 +1,40 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <input type="text" formControlName="id" />
-  <input type="text" formControlName="name" />
-  <input type="text" formControlName="types" />
-  <input type="text" formControlName="image" />
+  <label for="id">ID</label>
+  <input type="text" id="id" formControlName="id" />
+  <span *ngIf="form.get('id')?.invalid">
+    {{ getErrorMessage("id") }}
+  </span>
+
+  <label for="name">Name</label>
+  <input type="text" id="name" formControlName="name" />
+  <span *ngIf="form.get('name')?.invalid">
+    {{ getErrorMessage("name") }}
+  </span>
+
+  <label for="types">Types</label>
+  <div
+    class="checkbox-container"
+    formArrayName="types"
+    aria-labelledby="types-label"
+  >
+    <div *ngFor="let type of types; let i = index">
+      <input
+        type="checkbox"
+        [formControlName]="i"
+        [value]="type"
+        (change)="onCheckboxChange($event, type)"
+      />
+      {{ type }}
+    </div>
+  </div>
+  <span *ngIf="form.get('types')?.invalid">
+    {{ getErrorMessage("types") }}
+  </span>
+
+  <label for="image">Image</label>
+  <input type="text" id="image" formControlName="image" />
+  <span *ngIf="form.get('image')?.invalid">
+    {{ getErrorMessage("image") }}
+  </span>
   <button>Submit</button>
 </form>

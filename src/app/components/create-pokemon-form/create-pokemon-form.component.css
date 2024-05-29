@@ -1,0 +1,44 @@
+form {
+  border: solid 2px black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px;
+}
+form > *:not(label):not(span) {
+  padding: 16px;
+}
+button {
+  cursor: pointer;
+  color: #fff;
+  background-color: #3b4cca; /* Blue color */
+  border-radius: 8px;
+  border: 2px solid #ffcb05; /* Yellow color */
+  align-self: flex-end;
+  transition: background-color 0.3s, color 0.3s, transform 0.1s;
+}
+button:hover {
+  background-color: #ffcb05; /* Yellow color */
+  color: #3b4cca; /* Blue color */
+}
+button:active {
+  transform: scale(0.95);
+}
+.checkbox-container {
+  max-height: 150px; /* Adjust the height as needed */
+  overflow-y: auto;
+  border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+  padding: 5px; /* Optional: Add padding for better spacing */
+}
+.ng-invalid:not(form) {
+  border: 2px solid red;
+}
+.ng-valid {
+  border: 2px solid green;
+}
+span {
+  color: red;
+  font-size: 12px;
+}
