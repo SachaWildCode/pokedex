@@ -6,6 +6,7 @@ form {
   justify-content: center;
   gap: 16px;
   padding: 32px;
+  background-color: white;
 }
 form > *:not(label):not(span) {
   padding: 16px;
@@ -41,4 +42,8 @@ button:active {
 span {
   color: red;
   font-size: 12px;
+}
+h2 {
+  word-break: break-word;
+  font-size: 1.5rem;
 }

@@ -1,8 +1,13 @@
 <section>
   <h1>Pokedex</h1>
   <app-pokemon-detail [pokemon]="selectedPokemon!"></app-pokemon-detail>
+  <div>
+    <button (click)="goToCreatePokemon()">Create  </button>
+  </div>
+
   <app-pokemon-list
     [pokemons]="pokemons"
     (select)="selectPokemon($event)"
   ></app-pokemon-list>
+
 </section>

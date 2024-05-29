@@ -16,4 +16,10 @@ body {
   min-height: 100vh;
   justify-content: center;
   align-items: center;
+
+  background-color: #3b4cca;
+}
+
+img {
+  image-rendering: pixelated;
 }

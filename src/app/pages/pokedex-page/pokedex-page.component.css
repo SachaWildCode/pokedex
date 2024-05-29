@@ -3,6 +3,7 @@ section {
   display: flex;
   border: 64px solid black;
   max-height: 100vh;
+  flex-direction: column;
 }
 h1 {
   position: absolute;
@@ -13,24 +14,26 @@ h1 {
   line-height: 0;
 }
 app-pokemon-detail {
-  width: 30%;
+  width: 100%;
   background-color: red;
-  min-width: 200px;
+  height: 400px;
 }
 
 app-pokemon-list {
   overflow-y: scroll;
-  width: 70%;
+  height: calc(100vh - 128px);
+  max-width: calc(100vh - 128px);
 }
-@media (max-width: 768px) {
-  section {
-    flex-direction: column;
-  }
-  app-pokemon-detail {
-    width: 100%;
-    min-height: 200px;
-  }
-  app-pokemon-list {
-    width: 100%;
-  }
+div {
+  border: 1px solid black;
+  z-index: 1;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+button {
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  word-break: break-all;
 }
