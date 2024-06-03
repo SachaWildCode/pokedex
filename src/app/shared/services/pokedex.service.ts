@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { PokemonsMockService } from './pokemons-mock.service';
 import { Pokemon } from '../../models/pokemon.model';
+import { POKEMONS } from './pokemons-mock.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PokedexServiceService {
-  private pokemonsSubject: BehaviorSubject<Pokemon[]> = new BehaviorSubject<
-    Pokemon[]
-  >(this.pokemonsMockService.pokemons);
+  private pokemonsSubject: BehaviorSubject<Pokemon[]> = new BehaviorSubject<Pokemon[]>(POKEMONS);
   private pokemons: Observable<Pokemon[]> = this.pokemonsSubject.asObservable();
 
-  constructor(private pokemonsMockService: PokemonsMockService) {}
+  constructor() {}
 
   getPokemons(): Observable<Pokemon[]> {
     return this.pokemons;
